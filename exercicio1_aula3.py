@@ -1,3 +1,8 @@
+# Gere um dicionário, onde a chave é a tag h1
+# - O valor deve ser um novo dicionário
+# - cada chave do valor deverá ser o valor de 'atributo'
+# - cada valor deve ser o texto contido no elemento
+
 from selenium.webdriver import Firefox
 from time import sleep
 import pprint
@@ -10,14 +15,13 @@ browser.get(url)
 
 sleep(5)
 
-h1 = browser.find_element_by_tag_name("h1")
-ps = browser.find_elements_by_tag_name("p")
+h1 = browser.find_element_by_tag_name('h1')
+ps = browser.find_elements_by_tag_name('p')
 
-pp = pprint.PrettyPrinter(indent=4)
 d_values = {}
 
 for p in range(len(ps)):
-    d_values[ps[p].get_attribute("atributo")] = ps[p].text
+    d_values[ps[p].get_attribute('atributo')] = ps[p].text
 
 d = {h1.text: d_values}
 

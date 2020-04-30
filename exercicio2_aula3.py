@@ -14,20 +14,20 @@ browser.get(url)
 
 sleep(10)
 
-a = browser.find_element_by_tag_name('a')
-p = browser.find_elements_by_tag_name('p')
+a = browser.find_element_by_tag_name("a")
+p = browser.find_elements_by_tag_name("p")
 
 number = r.search(r"\d+", p[-1].text)
 
 a.click()
 
-p = browser.find_elements_by_tag_name('p')
+p = browser.find_elements_by_tag_name("p")
 
 result = r.search(r"\d+", p[-1].text)
 
 while number.group() != result.group():
     a.click()
-    p = browser.find_elements_by_tag_name('p')
+    p = browser.find_elements_by_tag_name("p")
     result = r.search(r"\d+", p[-1].text)
 
 sleep(2)

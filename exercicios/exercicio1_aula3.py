@@ -20,11 +20,9 @@ ps = browser.find_elements_by_tag_name('p')
 
 d_values = {}
 
-for p in range(len(ps)):
-    d_values[ps[p].get_attribute('atributo')] = ps[p].text
+for p in ps:
+    d_values[p.get_attribute('atributo')] = p.text
 
-d = {h1.text: d_values}
-
-pprint.pprint(d)
+pprint.pprint({h1.text: d_values})
 
 browser.quit()

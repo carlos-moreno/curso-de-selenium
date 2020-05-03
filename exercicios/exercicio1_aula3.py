@@ -26,3 +26,5 @@ for p in range(len(ps)):
 d = {h1.text: d_values}
 
 pprint.pprint(d)
+
+browser.quit()
